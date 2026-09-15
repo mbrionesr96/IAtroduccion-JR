@@ -1,0 +1,38 @@
+# ---- Quarto ----
+/.quarto/
+_book/
+_freeze/
+*_files/
+*_cache/
+site_libs/
+
+# ---- R ----
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# ---- Secretos: NUNCA subir claves de API ----
+.Renviron
+.env
+*.key
+secrets/
+
+# ---- Python (por si usas chunks de Python más adelante) ----
+__pycache__/
+.venv/
+env/
+
+# ---- Sistema operativo ----
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Datos sensibles ----
+datos-privados/
+*.xlsx
+*.csv
+!datos-ejemplo/*.csv
+
+**/*.quarto_ipynb
