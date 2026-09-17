@@ -1,0 +1,50 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "IAtroducción"
+  subtitle: "Inteligencia artificial aplicada al análisis de datos en postcosecha"
+  author: "María José Briones Rodríguez"
+  date: today
+  date-format: "D [de] MMMM [de] YYYY"
+  language: es
+  chapters:
+    - index.qmd
+    - part: "Mapa mental"
+      chapters:
+        - sesiones/01-que-es-la-ia.qmd
+#        - sesiones/02-panorama-y-limites.qmd
+#    - part: "Cómo se conversa con la IA"
+#      chapters:
+#        - sesiones/03-prompting.qmd
+#        - sesiones/04-documentos.qmd
+#    - part: "Aplicación al trabajo"
+#      chapters:
+#        - sesiones/05-investigacion.qmd
+#        - sesiones/06-comunicacion.qmd
+#        - sesiones/07-codigo-r.qmd
+#        - sesiones/08-integracion-api.qmd
+#  appendices:
+#    - apendices/a-herramientas.qmd
+#    - apendices/b-precios.qmd
+#    - apendices/c-glosario.qmd
+  search: true
+  sidebar:
+    style: docked
+
+format:
+  html:
+    theme: minty
+    embed-resources: true
+    toc: true
+    toc-title: "En esta sesión"
+    code-copy: true
+    code-overflow: wrap
+
+lang: es
+execute:
+  eval: false
+  echo: true
+  warning: false
+  message: false
