@@ -1,0 +1,122 @@
+---
+title: "¿Qué es la IA?"
+subtitle: "Más allá de un chatbot"
+author: Maria Briones
+date: 09/16/2026
+date-format: long
+format: 
+  revealjs :
+    embed-resources: true
+    width: 1800
+    height: 1000
+    margin: 0.1
+    min-scale: 0.2
+    max-scale: 2.0
+    theme: [default, ../assets/_mintysld.scss]
+transition: slide
+incremental: true
+scrollable: true
+---
+
+# Qué es (y qué no) {#sec-que-es-la-ia}
+
+Bajo el paraguas de la IA conviven enfoques distintos que resuelven problemas distintos, y varios de ellos ya forman parte del análisis de datos habitual en las empresas.
+
+- Detección de anomalías en una cadena de producción.
+- Reconocimiento facial.
+- Predicción de la vida util del producto.
+
+## El árbol de la IA
+
+![](/../assets/mapamental.png){fig-align="center"}
+
+La rama que hoy domina (y en la que nos enfocamos), es la **IA generativa**
+
+## Pero antes... un ejemplo
+Los productos Cherryway 4 y Cherryscan de MAF RODA estan diseñados para clasificar la fruta por, forma, color y tambien para detectar anomalías en la fruta.
+
+![](/../assets/s1/cherry4.jpg){fig-align="center"}
+
+El sistema que combina algoritmos de clasificación (aprendizaje supervisado) y detección de anomalías (aprendizaje no supervisado). Toda esta tecnología está montada sobre una estructura de redes neuronales (neural networks), lo que le da a la máquina la ventaja de analizar la fruta a gran velocidad, 'entendiendo' si una variación en la piel es solo un tono natural o un defecto real.
+
+## Qué distingue a la IA generativa?
+
+Los **Modelos generativos**, producen contenido nuevo — texto, imágenes, audio, código — a partir de una instrucción. Los LLM pertenecen a esta familia.
+
+> A diferencia de un modelo predictivo clásico, que devuelve un valor o una categoría, un modelo generativo devuelve texto, imágenes u otros contenidos que construye a medida.
+
+Internamente lo hace armando la respuesta pieza por pieza, eligiendo en cada paso la continuación más plausible de lo que ya lleva escrito, a partir de todo lo que vio durante su *entrenamiento*.
+
+## Conociendo a la IA generativa
+
+¿pero qué significa 'predecir la proxima palabra más probable'? ¿qué entendemos por 'entrenamiento'?
+
+### Modelo de inicio aleatoreo 
+
+Se inicia con un modelo de lenguaje natual (NLP) muy básico que ante consultas arroja un resultado aleatoreo (disparates).
+
+![](/../assets/s1/LLM0.gif){fig-align="center"}
+
+### Pre-entrenamiento 
+
+El modelo inicial se entrena sobre un corpus ENORME (material científico correcto, material divulgativo con errores, opiniones de foros, textos contradictorios entre sí, textos con sesgos culturales, comerciales o ideológicos).
+
+![](/../assets/s1/LLM1.gif){fig-align="center"}
+
+> NO ES UNA BASE DE DATOS. Una base de datos almacena información, la oración se guarda tal cual y la consulta la recupera idéntica. Un LLM, en cambio, NO almacena las oraciones que vio: las usa durante el entrenamiento para ajustar miles de millones de parámetros numéricos de modo que el modelo se vuelva más probable de producir textos parecidos a los que leyó.
+
+### Instrucción de afinamiento 
+
+Al modelo se le otorgan instrucciones para convertirlo en una herramienta de conversación. "No respondas temas potencialmente peligrosos", "Se amable", "Responde en un margen que invite al usuario a hacer más preguntas".
+
+![](/../assets/s1/LLM2.gif){fig-align="center"}
+
+Estas instrucciones vienen dadas por la compañía desarrolladora, no se pueden alterar y estan ocultas al usuario.
+
+### Instrucción de preferencias 
+
+Estas instrucciones son dadas directamente por el usuario.
+
+![](/../assets/s1/LLM3.gif){fig-align="center"}
+
+Muchos modelos pueden desplegar opciones de respuestas el usuario escoge como le gusta que le respondan y el modelo actualiza sus parametros para responderle a ese usuario en particular.
+
+### Afinamiento de razocinio
+
+Los modelos van actualizandose y complejizandose continuamente, integrando los conocimientos que adquiere al interactuar con los usuarios y la internet adquiere razocinio. 
+
+![](/../assets/s1/LLM4.gif){fig-align="center"}
+
+Esto es especialmente relevante para tareas matemáticas o lógicas y se basa en la idea del aprendizaje por refuerzo (¡Machine learning!), es decir, prueba y error.
+
+## Consecuencias de los LLM
+
+De la arquitectura misma del LLM se desprenden tres consecuencias que atraviesan todo el uso práctico de estas herramientas:
+
+1. **No consulta una base de datos de verdades.** 
+2. **No dispone de un mecanismo para reconocer sus propios límites.** 
+3. **La herramienta alucina** 
+
+> Por lo tanto **La IA generativa propone; quien la usa valida.**
+
+## Dos formas de acceder al mismo modelo
+
+Detrás de las herramientas conocidas hay un modelo. A ese modelo se le puede acceder de dos maneras:
+
+- A través de una **ventana de chat**, que es la vía habitual cuando una persona conversa con la herramienta.
+- A través de una **API**, que es la vía por la que un programa envía instrucciones al modelo sin intervención humana directa.
+
+## Usos frecuentes
+
+1. Creación de imágenes/videos. 
+2. Investigación: ahí donde usabamos google, ahora se utiliza la IA generativa (Gemini, Meta, Perplexity).
+3. Creación de reportes. 
+4. Creación de código para el análisis de datos, desarrollo de aplicaciones, creación de paginas web, etc. 
+
+## Criticas frecuentes
+
+1. Uso del agua y tierra.
+2. Demanda energética.
+3. Uso ético (datos personales, carrera armamentista, sensibilidad de los usuarios).
+4. Limitada capacidad de regulación. 
+5. Caja negra de entrenamiento.

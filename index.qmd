@@ -1,0 +1,36 @@
+# Bienvenida {.unnumbered}
+
+Este libro acompaña un curso particular de introducción a la inteligencia artificial pensado para quienes ya trabajan con datos — planillas de cálculo, software estadístico, informes técnicos — y quieren incorporar herramientas de IA a su día a día sin volverse programadores.
+
+No supone conocimientos previos de programación ni de teoría de machine learning. Sí asume familiaridad con conceptos estadísticos básicos y comodidad con Excel.
+
+Este libro crece con las sesiones: cada capítulo consolida lo visto en la clase correspondiente, agrega los enlaces a las herramientas mencionadas y deja constancia de los ejemplos trabajados.
+
+## Cómo está organizado el curso
+
+Las ocho sesiones están agrupadas en tres bloques.
+
+**Bloque A — Mapa mental.** Antes de usar cualquier herramienta hay que entender qué son y qué no son. Se cubren las diferencias entre IA generativa y modelos predictivos, el panorama actual del mercado y los límites que toda herramienta de IA generativa comparte.
+
+- Sesión 1 — ¿Qué es la IA? 
+- Sesión 2 — Mercado y límites
+
+**Bloque B — Cómo se conversa con la IA.** La calidad de lo que se obtiene depende mucho más de cómo se pide que de qué herramienta se usa. Se practica la construcción de instrucciones y el trabajo con documentos.
+
+- Sesión 3 — Prompting como habilidad
+- Sesión 4 — Trabajar con documentos y archivos
+
+**Bloque C — Aplicación al trabajo.** Se llevan las herramientas a los tres frentes concretos del trabajo diario: investigar, comunicar y analizar.
+
+- Sesión 5 — IA para investigación metodológica
+- Sesión 6 — IA para comunicación de resultados
+- Sesión 7 — IA para código en R
+- Sesión 8 — Integración, criterio propio y API
+
+## Cómo leer este libro
+
+**El código no se ejecuta al abrir el libro.** Los bloques de código en R aparecen escritos y con formato, pero están configurados para no correrse automáticamente. La idea es que sirvan como referencia para copiar, pegar y adaptar en tu propio entorno. Cuando un fragmento sí deba ejecutarse — por ejemplo, para reproducir un resultado puntual — se indicará explícitamente.
+
+<!-- **Los enlaces a herramientas y precios están en los apéndices**, no en el cuerpo de los capítulos. Ese material cambia con frecuencia y conviene tenerlo en un solo lugar fácil de actualizar. -->
+
+<!-- **Cada capítulo cierra con una breve tarea para la siguiente sesión.** No son ejercicios evaluados; son insumos concretos que se retoman en la clase siguiente.-->

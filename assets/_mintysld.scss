@@ -1,0 +1,176 @@
+/**
+ * Minty theme for Quarto reveal.js presentations.
+ * Adaptado a partir de:
+ *   - Bootswatch Minty 5.3.8 (variables y paleta del libro de apuntes)
+ *   - Solarized Dark / Moon theme para Quarto (estructura del tema de slides)
+ *
+ * Objetivo: mantener coherencia visual entre el libro (theme: minty)
+ * y las presentaciones de clase.
+ */
+
+/*-- scss:defaults --*/
+
+// Fuente de titulares de Minty
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+
+//
+// Sistema de colores (portado de Minty _variables.scss)
+//
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #f7f7f9 !default;
+$gray-300: #eceeef !default;
+$gray-400: #ced4da !default;
+$gray-500: #aaa !default;
+$gray-600: #888 !default;
+$gray-700: #5a5a5a !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #ff7851 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffce67 !default;
+$green:   #56cc9d !default;
+$teal:    #20c997 !default;
+$cyan:    #6cc3d5 !default;
+
+$primary:   #78c2ad !default;  // verde menta característico de Minty
+$secondary: #f3969a !default;  // rosa coral
+$success:   $green   !default;
+$info:      $cyan    !default;
+$warning:   $yellow  !default;
+$danger:    $red     !default;
+$light:     $gray-100 !default;
+$dark:      $gray-800 !default;
+
+//
+// Tipografía
+//
+
+$font-family-sans-serif:
+    Montserrat,
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif !default;
+
+$presentation-heading-font: $font-family-sans-serif !default;
+
+//
+// Overrides del tema de reveal.js (ver template/settings.scss de Quarto)
+//
+
+// Cuerpo: fondo claro, texto en gris oscuro para legibilidad a distancia.
+// Minty usa $gray-600 para body en web; en slides subimos a $gray-700
+// porque el contexto (proyección, pantalla compartida por Zoom) exige
+// más contraste que la lectura web.
+$body-bg:                          $white   !default;
+$body-color:                       $gray-700 !default;
+
+// Titulares en el mismo tono que Minty; sin uppercase (Minty no lo usa).
+$presentation-heading-color:       $gray-700 !default;
+$presentation-heading-text-shadow: none      !default;
+$presentation-heading-text-transform: none   !default;
+$presentation-heading-font-weight: 700       !default;
+
+// Pesos de encabezado escalonados para jerarquía visible en slides
+$presentation-h1-font-size:        2.5em !default;
+$presentation-h2-font-size:        1.6em !default;
+$presentation-h3-font-size:        1.3em !default;
+$presentation-h4-font-size:        1.0em !default;
+
+// Enlaces en verde menta (color primario de la marca del curso)
+$link-color:                       $primary !default;
+$link-color-hover:                 $secondary !default;
+
+// Selección de texto en rosa coral (secundario), como en el libro
+$selection-bg:                     $secondary !default;
+$selection-color:                  $white     !default;
+
+// Texto sobre fondos claros
+$light-bg-text-color:              $gray-800 !default;
+
+// Panel de entrada (input) en tinte suave del primario
+$input-panel-bg:                   rgba(120, 194, 173, 0.15) !default;
+
+// Bordes y radios (heredados de Minty)
+$border-radius:                    .4rem !default;
+$border-radius-lg:                 .6rem !default;
+$border-radius-sm:                 .3rem !default;
+
+
+/*-- scss:rules --*/
+
+// Ajustes finos específicos de las slides que no se resuelven solo con variables.
+
+.reveal {
+  // Peso ligeramente más marcado para el cuerpo en pantallas grandes
+  font-weight: 400;
+
+  // Titulares con el mismo tratamiento que en el libro
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $presentation-heading-font;
+    letter-spacing: normal;
+  }
+
+  // Enlaces: subrayado sutil, color primario, hover en secundario
+  a {
+    color: $link-color;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(120, 194, 173, 0.4);
+    transition: color .15s ease, border-color .15s ease;
+
+    &:hover {
+      color: $link-color-hover;
+      border-bottom-color: $link-color-hover;
+    }
+  }
+
+  // Bloques de código con fondo tenue en tono menta muy claro
+  pre, code {
+    background-color: rgba(120, 194, 173, 0.08);
+    border-radius: $border-radius-sm;
+  }
+
+  pre {
+    padding: 0.6em 0.8em;
+    border-left: 3px solid $primary;
+  }
+
+  // Citas destacadas en el tono secundario
+  blockquote {
+    border-left: 4px solid $secondary;
+    padding-left: 1em;
+    color: $gray-700;
+    font-style: italic;
+  }
+
+  // Tablas: encabezado con el color primario, filas alternadas suaves
+  table {
+    thead {
+      background-color: $primary;
+      color: $white;
+    }
+    tbody tr:nth-child(even) {
+      background-color: rgba(120, 194, 173, 0.06);
+    }
+  }
+}
+
+// Barra de progreso y controles de reveal.js en color primario
+.reveal .progress {
+  color: $primary;
+}
+.reveal .controls {
+  color: $primary;
+}
