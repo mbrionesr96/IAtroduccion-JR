@@ -10,7 +10,11 @@ No toda la inteligencia artificial es un chatbot. Bajo el paraguas de la IA conv
 
 ## El árbol de la IA
 
-![](/./assets/mapamental.png){fig-align="center"}
+::: {#fig-IAumbrella fig-align="center"}
+![](/assets/mapamental.png){width=80%}
+
+Esquema referencial
+:::
 
 La inteligencia artificial es un campo amplio. La rama que hoy domina (y en la que nos enfocamos), es la **IA generativa**: en particular los *Large Languaje Models* o LLM, que predicen la continuación más plausible de un texto.
 
@@ -32,7 +36,11 @@ Los productos Cherryway 4 y Cherryscan de MAF RODA estan diseñados para clasifi
 
 El [sistema](https://www.postharvest.biz/maf-roda/maf-roda-strengthens-cherry-quality-control-with-artificial-intelligence-and-automation#:~:text=From%20machine%20learning%20to%20deep%20learning%20in%20fruit%20sorting.) combina algoritmos de clasificación (aprendizaje supervisado) y detección de anomalías (aprendizaje no supervisado). Toda esta tecnología está montada sobre una estructura de redes neuronales (neural networks), lo que le da a la máquina la ventaja de analizar la fruta a gran velocidad, 'entendiendo' si una variación en la piel es solo un tono natural o un defecto real.
 
-![](/../assets/s1/cherry4.jpg){fig-align="center"}
+::: {#fig-Cherryway4 fig-align="center"}
+![](/assets/s1/cherry4.jpg){width=80%}
+
+Cherryway 4
+:::
 
 ## Qué distingue a la IA generativa
 
@@ -53,7 +61,11 @@ Internamente lo hace armando la respuesta pieza por pieza, eligiendo en cada pas
 ### Conociendo a la IA generativa
 Todas las IAs generativas tienen como *base* un LLM porque su primera tarea (y la que es fundamental para desencadenar otro tipo de procesos) es comprender el requerimiento que le hace el usuario que está escrito en lenguaje natural. Por lo tanto, todo LLM se inicia con un *modelo de lenguaje natual (NLP)* muy básico que ante consultas arroja un resultado aleatoreo (disparates).
 
-![](/../assets/s1/LLM_general.gif){fig-align="center"}
+::: {#fig-LLMstructure fig-align="center"}
+![](/assets/s1/LLM_general.gif){width=60%}
+
+Etapas de desarrollo de un LLM, diseñado por [Avi Chawla](https://blog.dailydoseofds.com/p/4-stages-of-training-llms-from-scratch)
+:::
 
 Posteriormente, el modelo inicial se *entrena* sobre un corpus ENORME. Este corpus normalmente se adquiere de fuentes abiertas de la internet (sin derechos de propiedad intelectual o comercial) y puede contener material científico correcto, material divulgativo con errores, opiniones de foros, textos contradictorios entre sí, textos con sesgos culturales, comerciales o ideológicos. 
 
@@ -78,7 +90,7 @@ De la forma en que los LLM se contruyen se desprenden tres consecuencias que atr
 3. **La herramienta alucina** Cuando produce una referencia, una cifra o un método que suena razonable pero no existe o es incorrecto, no está fallando de manera excepcional: está funcionando como funciona, porque su tarea escencial es *responder*.
 
 ::: {#fig-alucinaciones fig-align="center"}
-![](/../assets/s1/alucinaciones.jpg)
+![](/assets/s1/alucinaciones.jpg){width=60%}
 
 Imagen desarrollada por la plataforma [Consultor 365](https://www.consultor365.com/ia/cuanto-alucinan-los-modelos-de-ia/)
 :::
