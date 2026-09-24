@@ -168,7 +168,7 @@ La IA avanza a un paso tan rápido que es imposible generar una legislación y n
 
 Los modelos ejecutan la tarea, pero no nos hablan en detalle de cómo la ejecutaron. El proceso se vuelve invisible y en combinación con el afinamiento por preferencias y la base del modelo (predecir la proxima palabra más probable, es decir, un proceso no deterministico) hace que las respuestas no sean reproducibles entre usuarios o incluso entre momentos distintos (las respuestas pueden parecerse pero jamás son las mismas). 
 
-Tampoco conocemos con claridad el corpus sobre el cual el modelo fue entrenado ¿qué pasa si la base de entrenamiento fue contenido con un gran numero de impresiciones o contenido derechamente fraudulento? De hecho, en un mundo donde el contenido generado por IA es cada vez más abundante ¿la IA se entrena sobre contenido ya generado por IA? ¿qué consecuencias puede tener aquello?
+Tampoco conocemos con claridad el corpus sobre el cual el modelo fue entrenado ¿qué pasa si la base de entrenamiento fue contenido con un gran número de impresiciones o contenido derechamente fraudulento? De hecho, en un mundo donde el contenido generado por IA es cada vez más abundante ¿la IA se entrena sobre contenido ya generado por IA? ¿qué consecuencias puede tener aquello?
 
 ## Glosario mínimo de la sesión
 

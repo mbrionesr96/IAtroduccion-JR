@@ -14,10 +14,10 @@ book:
     - part: "Mapa mental"
       chapters:
         - sesiones/01-que-es-la-ia.qmd
-#        - sesiones/02-panorama-y-limites.qmd
-#    - part: "Cómo se conversa con la IA"
-#      chapters:
-#        - sesiones/03-prompting.qmd
+        - sesiones/02-mercado.qmd
+    - part: "Cómo se conversa con la IA"
+      chapters:
+        - sesiones/03-prompting.qmd
 #        - sesiones/04-documentos.qmd
 #    - part: "Aplicación al trabajo"
 #      chapters:

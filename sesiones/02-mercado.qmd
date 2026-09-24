@@ -1,0 +1,237 @@
+# El mercado
+
+[¿qué opciones tenemos?]{style="font-size: 2em; font-weight: bold;"}
+
+## Repaso de la clase anterior {#sec-repaso}
+
+No toda la inteligencia artificial es un chatbot. Bajo el paraguas de la IA conviven enfoques distintos que resuelven problemas distintos, y varios de ellos ya forman parte del análisis de datos habitual en las empresas aunque no se los llame "IA" en el día a día.
+
+::: {.img-float}
+![](/assets/mapamental.png){style="float: right; margin: 5px;  width: 35%;"}
+:::
+
+La **IA generativa** en su capa más básica se compone de un *Large Languaje Model* o LLM, que predice la continuación más plausible de un texto. El objetivo de las herramientas generativas es producir contenido nuevo — texto, imágenes, audio, código — a partir de una instrucción. 
+
+La IA generativa se *entrena* sobre cantidades giantescas de contenido. Este corpus de entrenamiento **no es una base de datos**: La respuesta se genera, no se recupera.
+
+Problemas comunes de IA generativa son la falta de mecanismos para reconocer sus propios límites y las alucinaciones especialmente en preguntas de nicho o ciencia de frontera.
+
+Por lo tanto **La IA generativa propone; quien la usa valida.**
+
+## ¿Qué opciones tenemos? {#sec-oferta}
+
+El mercado de la IA generativa no es un catálogo de productos aislados, sino un puñado de empresas grandes compitiendo por el mismo tipo de usuario, con modelos de negocio parecidos y con posturas éticas y políticas cada vez más difíciles de ignorar. Elegir una herramienta ya no es una decisión solamente técnica.
+
+::: {#fig-mosaico fig-align="center"}
+![](/assets/s2/mosaico.png){width=80%}
+:::
+
+Aunque el usuario final se encuentra con muchos nombres de herramientas, detrás hay pocas empresas. Cuatro grandes desarrolladores estadounidenses concentran el grueso del mercado consumer: **OpenAI**, **Anthropic**, **Google** y **Microsoft**. A su alrededor conviven jugadores especializados: **Perplexity** enfocado en búsqueda con citas, **Meta** con sus asistentes integrados en WhatsApp, Instagram y Facebook, **xAI** de Elon Musk con su producto Grok, la china **DeepSeek** y la francesa **Mistral** como alternativa europea.
+
+Que casi todo el mercado consumer esté concentrado en Estados Unidos, con China como contrapeso y Europa como tercer polo muy pequeño, no es una casualidad. Refleja dónde está el capital, dónde estan las universidades más grandes, y dónde estan las decisiones políticas y militares que en los últimos dos años han empezado a moldear el sector.
+
+### ChatGPT (OpenAI)
+
+::: {.img-float}
+![](/assets/s2/GPT.jpg){style="float: right; margin: 5px;  width: 25%;"}
+:::
+
+**OpenAI** es la empresa que abrió el mercado consumer con el lanzamiento de ChatGPT *a fines de 2022* y sigue siendo la marca más reconocida. Su modelo de negocio combina una API para desarrolladores, con una [oferta de planes](https://chatgpt.com/es-419/pricing/) para usuario final que va desde una versión gratuita con límites bajos hasta un plan Pro pensado para uso intensivo, con planes intermedios para individuos y equipos. Los *planes suelen distinguirse por la cantidad de mensajes con los modelos más potentes*, el acceso a modelos de razonamiento (los que "piensan antes de responder"), la generación de imágenes y video, y las funcionalidades de agentes. 
+
+ChatGPT destaca en tareas de **razonamiento matemático y lógico**, en el **uso de agentes** autónomos que ejecutan acciones por su cuenta, y en la amplitud de su ecosistema: es la herramienta con más integraciones de terceros disponibles. Sus debilidades principales son la variabilidad de calidad entre modelos (no todos los planes acceden a los mismos) y una *tendencia a respuestas más verbosas* de lo necesario cuando no se le pide brevedad.
+
+### Claude (Anthropic)
+
+::: {.img-float}
+![](/assets/s2/claude.png){style="float: right; margin: 5px; width: 25%;"}
+:::
+
+**Anthropic** fue fundada por ex-integrantes de OpenAI y se ha posicionado como la empresa más conservadora en materia de seguridad. Su producto se llama Claude y su [estructura de planes](https://claude.com/es/pricing) es similar a la de ChatGPT: una versión gratuita, un plan Pro para individuos, un plan Max de uso intensivo, y planes de equipo y empresa.
+
+Claude destaca especialmente en **tareas de escritura extensa, análisis de documentos largos y programación**. Su estilo de respuesta tiende a ser más natural y menos formulaico que el de ChatGPT, y su tolerancia a documentos grandes (contratos, papers completos, planillas) es una ventaja concreta para quien trabaja con material técnico. Su debilidad principal es una integración con la web más limitada: no busca información en línea por defecto en todos los planes, y su ecosistema de plugins es menor que el de sus competidores.
+
+### Gemini (Google)
+
+::: {.img-float}
+![](/assets/s2/gemini.jpg){style="float: right; margin: 5px; width: 25%;"}
+:::
+
+**Gemini** es el asistente de Google y *forma parte de una oferta más amplia integrada al ecosistema de la empresa* (Gmail, Drive, Docs, YouTube). Su [estructura de planes](https://one.google.com/intl/es-419_cl/about/google-ai-plans/) se articula con las suscripciones de Google One: una versión gratuita, un plan Google AI Pro y un plan Ultra pensado para uso intensivo con acceso al modelo más avanzado y a las funcionalidades de video.
+
+La fortaleza más distintiva de Gemini es el **manejo de contexto muy largo** (procesa libros enteros o horas de audio y video en una sola conversación) y el análisis multimodal: entrega buenos resultados cuando se le pide analizar imágenes, gráficos o transcripciones. Su otra ventaja concreta es la **integración nativa con las herramientas de Google** que muchos usuarios ya utilizan. Su debilidad histórica ha sido rendir por debajo de ChatGPT y Claude en algunos benchmarks de razonamiento puro, aunque la diferencia se ha ido acortando.
+
+### Copilot (Microsoft)
+
+::: {.img-float}
+![](/assets/s2/copilot.jpg){style="float: right; margin: 5px; width: 25%;"}
+:::
+
+**Microsoft** vendió su producto Copilot como el asistente integrado a Windows y a la suite Office (Word, Excel, PowerPoint, Outlook). Internamente utiliza en gran medida modelos de OpenAI (empresa en la que Microsoft es el inversionista más grande) combinados con desarrollos propios. Sus [planes](https://www.microsoft.com/es-cl/microsoft-365-copilot/pricing/individuals) incluyen una versión gratuita, un plan Copilot Pro individual y el plan Microsoft 365 Copilot pensado para uso corporativo dentro de Office.
+
+Copilot **destaca cuando el trabajo transcurre dentro del ecosistema Microsoft**: pedirle que resuma un documento de Word abierto, que genere una fórmula en Excel o que arme una presentación en PowerPoint. Fuera de ese ecosistema pierde su ventaja competitiva y queda por detrás de ChatGPT y Claude. Su otra ventaja es la conexión directa con el buscador Bing, lo que le permite responder con información reciente sin depender de la fecha de corte de su entrenamiento.
+
+### Perplexity
+
+::: {.img-float}
+![](/assets/s2/perplexity.png){style="float: right; margin: 5px; width: 25%;"}
+:::
+
+**Perplexity AI** es una empresa relativamente joven que optó por un nicho específico: no ser un chatbot generalista sino un motor de búsqueda potenciado por IA. Su producto está diseñado para responder preguntas con citas verificables a fuentes en internet, lo que lo hace especialmente útil para investigación. [Ofrece](https://www.perplexity.ai/es/hub/pricing) un plan gratuito con búsquedas ilimitadas pero funciones acotadas, un plan Pro que amplía las búsquedas "profundas" y un plan Max de uso intensivo.
+
+Para los objetivos de investigación metodológica, Perplexity aporta algo que los otros chatbots no dan de fábrica: cada afirmación viene con un enlace a la fuente. La debilidad importante que hay que conocer es que la calidad y legitimidad de esas citas ha sido cuestionada. Múltiples editores importantes (The New York Times, The Wall Street Journal, Chicago Tribune, Nikkei) tienen demandas activas contra Perplexity por uso no autorizado de sus contenidos, incluyendo material tras muros de pago. Que aparezca una cita no significa que la información realmente esté ahí ni que el editor esté de acuerdo con su uso.
+
+<!-- Fuente NYT vs Perplexity: https://www.courthousenews.com/new-york-times-joins-copyright-fight-against-ai-startup-perplexity/ -->
+
+### Meta AI (en WhatsApp e Instagram)
+
+::: {.img-float}
+![](/assets/s2/Meta.jpg){style="float: right; margin: 5px; width: 25%;"}
+:::
+
+**Meta** integró su asistente Meta AI directamente en WhatsApp, Instagram y Facebook. Es gratis y no requiere descargar ninguna aplicación adicional: aparece dentro del chat como un contacto más. Los modelos que utiliza (la familia Llama) son desarrollados por la propia Meta y son más débiles que la frontera actual en tareas técnicas complejas, los [planes de pago](https://www.meta.com/es-la/meta-one-plans/?srsltid=AU7gw4US89Gx9a0uMFKeGvXn_JdZQmknciMJtcYstnd8XucX4KC_5Lad) estan enfocados en el uso de la IA dentro de sus aplicaciones. 
+
+La ventaja concreta para su trabajo es transformar notas de voz o texto tomadas en terreno en algo estructurado sin salir de WhatsApp. La debilidad importante es que las conversaciones con Meta AI **no siguen las mismas reglas de privacidad que los chats normales de WhatsApp**: los mensajes al asistente se procesan en los servidores de Meta y pueden ser utilizados para entrenar sus modelos. Vale la pena revisar los términos antes de mandar información sensible de clientes o de campos.
+
+### Grok (xAI)
+
+::: {.img-float}
+![](/assets/s2/Grok.jpg){style="float: right; margin: 5px; width: 25%;"}
+:::
+
+**xAI** es la empresa de Elon Musk, y su producto se llama Grok. Está disponible tanto como aplicación independiente como integrado en la red social X (antes Twitter). Se ha posicionado explícitamente como una alternativa "menos filtrada" a los chatbots convencionales.
+
+Grok no destaca en ninguno de los objetivos concretos de este curso y arrastra controversias importantes que se ven en el bloque final: por eso lo menciono acá para reconocimiento pero no lo recomiendo como herramienta de trabajo profesional.
+
+### DeepSeek
+
+::: {.img-float}
+![](/assets/s2/deepseek.jpg){style="float: right; margin: 5px; width: 25%;"}
+:::
+
+**DeepSeek** es una empresa china que a principios de 2025 sorprendió al mercado con modelos técnicamente competitivos a una fracción del costo de sus rivales estadounidenses. Su producto es utilizable gratis y su API es varias veces más barata que la de OpenAI o Anthropic.
+
+Sin embargo, DeepSeek presenta dos problemas críticos para uso profesional. El primero: los datos se almacenan en servidores en China, y la legislación china obliga a las empresas a entregar información al gobierno cuando este la solicite. Varios gobiernos (Italia, Australia, Taiwán, Corea del Sur, Alemania, República Checa) han prohibido su uso en dispositivos oficiales por esta razón. El segundo: censura hardcodeada sobre temas sensibles al gobierno chino (Taiwán, Tiananmen, Xinjiang, protestas del papel blanco), documentada por investigadores independientes. Para trabajar con datos de clientes o para investigación libre de sesgos políticos, no es una opción recomendable.
+
+<!-- Fuente DeepSeek prohibiciones: https://techcrunch.com/2025/02/03/deepseek-the-countries-and-agencies-that-have-banned-the-ai-companys-tech -->
+
+### Mistral (mención)
+
+**Mistral AI** es una empresa francesa que ofrece una alternativa europea, con mejor postura de privacidad al estar sujeta al reglamento GDPR de la Unión Europea. Sus modelos son competentes aunque no lideran los rankings de rendimiento. Para quien priorice el eje de privacidad y jurisdicción europea es una opción a explorar.
+
+## La elección
+
+Con nueve nombres sobre la mesa la pregunta útil no es "cuál es la mejor" sino "cuál conviene para qué". Los tres objetivos de trabajo que planteamos al inicio del curso ordenan la decisión.
+
+**Para investigar y discutir metodologías estadísticas de postcosecha**, las mejores opciones son *Claude o ChatGPT*: son los que mantienen conversación técnica profunda con mejor calidad de razonamiento. Perplexity aporta como complemento porque agrega el paso de citar fuentes, con el cuidado de siempre revisar que la cita realmente diga lo que se afirma. Esta línea se trabaja en más detalle en la sesión 5, donde se ven además herramientas académicas específicas.
+
+**Para elaborar reportes a partir de notas dispersas de visitas a terreno**, Claude o ChatGPT integran chat de voz directamente en su interfaz tanto web como movil, ChatGPT tiene un mejor desempeño con el español. Gemini integra esta opción mediante su servicio Gemini Live disponible solo en dispositivos móviles. Esta línea continúa en la sesión 4, sobre trabajo con documentos propios.
+
+**Para automatizar procesos en Excel y eventualmente generar código R**, la opción inmediata es Copilot dentro de Excel para tareas rutinarias, y Claude o ChatGPT para pedir código R cuando la tarea escala. Esta línea se aborda en profundidad en la sesión 7.
+
+### Factores ético-políticos
+
+Elegir una herramienta de IA implica, aunque no se quiera, alinearse con la postura política y comercial de una empresa. La información que sigue es factual: contratos públicos, cartas del Congreso, reportajes periodísticos verificables. Las conclusiones son de cada quien.
+
+>  La información en esta subsección está actualizada hasta el 20 de septiembre 2026.
+
+#### Contratos con el Pentágono y el gobierno de EE.UU.
+
+En julio de 2025, el Departamento de Defensa de Estados Unidos (DoD) firmó contratos de hasta 200 millones de dólares cada uno con OpenAI, Anthropic, Google y xAI para el [desarrollo de capacidades de IA](https://fortune.com/2025/07/14/elon-musk-doge-cuts-federal-contracts-xai-grok-for-government-200-million-contract-defense-department) con fines militares y de seguridad. Estos contratos se enmarcan en una iniciativa más amplia gestionada por la General Services Administration (GSA), que ha licenciado ChatGPT, Claude, Gemini, Grok y Perplexity a agencias federales por sumas simbólicas.
+
+En 2026 la administración Trump presionó a Anthropic para que redujera sus límites de seguridad ("safeguards") con el fin de extender el uso de Claude para todos los usos legales, incluyendo potencialmente armas autónomas y vigilancia doméstica. Anthropic se negó lo que devino en una orden ejecutiva a las agencias federales para descontinuar el uso de Claude, adicionalmente se amenazó con incluir a Anthropic como 'riesgo para la cadena de suministro'. En mayo de 2026, ocho empresas firmaron acuerdos con el DoD para desplegar sus modelos IA en redes clasificadas del Pentágono (OpenAI, Google, Microsoft, AWS, Nvidia, SpaceX, Oracle y Reflection AI); Anthropic quedó fuera. 
+
+Las principales empresas estadounidenses de IA mantienen actualmente algún tipo de relación comercial con el gobierno federal estadounidense, aunque difieren significativamente en las condiciones de uso militar que aceptan.
+
+<!-- [Espacio para imagen: podría ir un timeline visual simple de los hitos 2025-2026 de contratos AI-Pentágono, o una captura del comunicado de OneGov] -->
+
+#### Relación con la administración Trump
+
+El acercamiento de varios ejecutivos del sector a la administración Trump ha sido explícito. Elon Musk fue el jefe de DOGE (la oficina que Trump creó para recortar el gasto federal), en paralelo, su empresa xAI ganó el contrato de 200 millones de dólares con el Pentágono. 
+
+Meta, Amazon, Google, Microsoft y Sam Altman (a título personal) donaron $1 millón de dólares cada uno al fondo de inauguración de Trump entre diciembre de 2024 y enero de 2025. Esta es una práctica relativamente estándar en el proceso de cambio de mando estadounidense, sin embargo la administración Trump estableció un record de donaciones en su fondo inaugural alcanzando los 170 millones de dolares en comoración a los 63 millones recaudados por Biden cuatro años antes.
+
+En agosto de 2026, Mark Zuckerberg (Meta) mantuvo una conversación privada con Donald Trump sobre una propuesta de crear un organismo nacional para supervisar la regulación de la inteligencia artificial en Estados Unidos. Según fuentes de la Casa Blanca, Zuckerberg expresó su oposición a la propuesta y defendió un enfoque regulatorio más ligero, argumentando que la burocracia frenaría el desarrollo frente a competidores extranjeros como China.
+
+En septiembre de 2026, cuando estalló el debate sobre la velocidad de desarrollo de la IA, Trump declaró que estas herramientas no necesitaban de safeguards si no tansolo a un presidente inteligente. China respondió provocativamente: si USA desaceleraba el desarrollo, ellos lo acelerarían. Zuckerberg nuevamente defendió que las empresas de IA tienen incentivos suficientes para desarrollar IA de manera segura sin necesidad de una desaceleración coordinada, en contra de las posturas más cautelosas de Anthropic y OpenAI.
+
+En general hay grados: algunos ejecutivos son aliados políticos activos, otros mantienen distancia pública mientras cierran los mismos contratos.
+
+#### Relación con operaciones militares israelíes
+
+Google y Amazon firmaron en 2021 un contrato de 1.200 millones de dólares con el gobierno de Israel, conocido como Project Nimbus, para proveer servicios de nube y de inteligencia artificial, incluyendo al Ministerio de Defensa. Trabajadores de Google que protestaron públicamente por el contrato fueron despedidos en 2024.
+
+Microsoft mantiene contratos con las Fuerzas de Defensa de Israel. Tras un reportaje del [Guardian](https://www.theguardian.com/us-news/2025/oct/29/google-amazon-israel-contract-secret-code?utm_source=chatgpt.com), en septiembre de 2025 Microsoft cortó parte de esos servicios, aunque no todos.
+
+OpenAI modificó en enero de 2024 su política de uso para permitir aplicaciones militares (previamente prohibidas de forma explícita) y anunció posteriormente su contrato con el Pentágono. La política actual continúa prohibiendo determinados usos, incluyendo desarrollar armas y determinados usos de seguridad nacional
+
+Este eje es donde más información nueva aparece hoy día, en buena parte por trabajo periodístico sostenido y filtraciones internas de empleados de las propias empresas.
+
+#### Datos, jurisdicción y propiedad intelectual
+
+El almacenamiento de datos y las jurisdicciones que aplican sobre ellos determinan qué gobiernos podrían eventualmente acceder a las conversaciones de usuarios, generalmente los marcos jurídicos tienen contemplan la protección de datos de los usuarios, pero hasta donde esas salvaguardas sean aplicadas depende del contexto geopolítico.
+
+Las herramientas estadounidenses operan bajo ley estadounidense, que también obliga a las empresas a entregar información bajo determinadas órdenes judiciales; la diferencia principal está en los marcos de protección y en qué información se retiene.
+
+DeepSeek almacena datos en China y el gobierno chino es uno de sus principales inversionistas. Hay países/organismos que han restringido DeepSeek por una combinación de preocupaciones de seguridad nacional, protección de datos y posible transferencia de información a China.
+
+<!-- Fuente DeepSeek riesgos privacidad y bans: https://techjacksolutions.com/ai-tools/deepseek/deepseek-security-and-privacy-risks/ -->
+
+Perplexity se ha enfrentado a diversas demandas por copyright debido a scraping no autorizado de contenidos, incluyendo material tras muros de pago. Esto afecta la confianza en la política de uso de datos de las herramientas de IA.
+
+En agosto 2026 el Congreso estadounidense impulsó una investigación sobre Meta, motivada por los riesgos que implica delegar en IA la moderación de contenido y la detección de deepfakes de cara a las elecciones de medio término (midterms) de 2026 en EE. UU.
+
+Por otra parte, existe un dilema entre Modelos Propietarios vs. Código Abierto. Herramientas como Llama (Meta) o DeepSeek permiten descarga local de algunos modelos, lo que le da a una organización soberanía sobre sus datos (evitando leyes extranjeras o envíos a la nube), pero abre el debate sobre la falta de control posterior sobre usos maliciosos.
+
+> Es posible hacerle preguntas a las herramientas sobre posturas frente a temas controversiales, por lo generla evitan tomar una posición cerrada pero puede ser una forma insteresante de explorar su sesgo de entrenamiento o de las instrucciones de las empresas. De vez en cuando en redes sociales se viralizan este tipo de [experimentos](https://www.instagram.com/p/DY8TOVzkXdY/?utm_source=ig_web_copy_link&igsi=NTc4MTIwNjQ2YQ==). 
+
+### Resumen
+
+<!-- [Espacio para imagen alternativa: si se prefiere una infografía en lugar de tabla, se puede reemplazar por un gráfico comparativo] -->
+
+| Herramienta | Empresa (país) | Planes | Fortaleza principal | Debilidad principal |
+|---|---|---|---|---|
+| **ChatGPT** | OpenAI (EE.UU.) | Free / Go (10k) / Plus (20k) / Pro (100k) | Razonamiento, agentes, ecosistema, imagenes | Verbosidad, variabilidad entre modelos |
+| **Claude** | Anthropic (EE.UU.) | Free / Pro (20k) / Max (100k) | Texto largo, código, documentos | Web limitada, menos plugins, no genera imágenes |
+| **Gemini** | Google (EE.UU.) | Free / AI Plus (5k) / AI Pro (20k) / Ultra (90k) | Contexto largo, multimodal, integra Google | Razonamiento por detrás |
+| **Copilot** | Microsoft (EE.UU.) | Free / M365 personal (8,5k) / M365 Premium (22k) / M365 Pro (110k) | Integración con Office y Windows | Fuera de Office pierde ventaja |
+| **Perplexity** | Perplexity AI (EE.UU.) | Free / Pro (20k) / Max (200k) | Búsqueda con citas | Legitimidad de citas cuestionada |
+| **Meta AI** | Meta (EE.UU.) | Gratis en WhatsApp/IG/FB | Comodidad, integrado en apps ya usadas | Privacidad distinta al chat normal |
+| **Grok** | xAI (EE.UU.) | Free / X Premium+ / SuperGrok | (no destaca para uso profesional) | Controversias éticas y de moderación |
+| **DeepSeek** | DeepSeek (China) | Gratis / API barata | Bajo costo | Datos en China, censura hardcodeada |
+| **Mistral** | Mistral AI (Francia) | Free / Pro / Team | Jurisdicción europea (GDPR) | Rendimiento no lidera |
+
+No hay una herramienta buena ni una mala. Hay compromisos que cada usuario equilibra según sus prioridades: comodidad de uso, calidad técnica, costo, privacidad, postura política de la empresa detrás. Una decisión práctica y sensata para el trabajo profesional es elegir dos herramientas complementarias en vez de una: un chatbot de trabajo principal (Claude o ChatGPT, según preferencia de estilo) y un especializado para búsqueda con citas verificables (Perplexity, con la reserva señalada). La herramienta que se elija importa menos que aprender a conversar bien con ella; sobre eso trata la próxima sesión.
+
+## Glosario mínimo de la sesión
+
+- **Cuota de mensajes:** cantidad de mensajes que un plan permite enviar al modelo más avanzado en un período (usualmente cada 5 horas, día o semana).
+- **Modelo de razonamiento:** variante de un LLM que dedica más tiempo a "pensar" antes de responder, mejor para tareas matemáticas y lógicas.
+- **Agente:** sistema basado en IA que ejecuta acciones por su cuenta (buscar, comprar, enviar correos) siguiendo una instrucción del usuario.
+- **Multimodal:** capacidad de un modelo para procesar y generar más de un tipo de contenido (texto, imágenes, audio, video).
+- **Contexto largo:** capacidad del modelo de trabajar con documentos o conversaciones muy extensas sin perder información del inicio.
+- **Jurisdicción de datos:** país cuyas leyes aplican al almacenamiento y acceso a los datos que el usuario comparte con la herramienta.
+
+<!-- ============================================================ -->
+<!-- FUENTES CONSULTADAS (verificadas septiembre 2026):             -->
+<!-- 1. Contratos $200M DoD con OpenAI/Anthropic/Google/xAI:         -->
+<!--    https://fortune.com/2025/07/14/elon-musk-doge-cuts-federal-contracts-xai-grok-for-government-200-million-contract-defense-department -->
+<!-- 2. Grok MechaHitler y contrato Pentágono:                       -->
+<!--    https://www.newsweek.com/elon-musks-controversial-grok-ai-lands-contract-pentagon-2098771 -->
+<!-- 3. Grok GSA deal $0.42 por agencia:                             -->
+<!--    https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musks-grok-ai-to-be-used-by-us-government-at-a-price-of-42-cents-per-agency-trump-admin-joining-meta-openai-in-recent-trend-of-ai-govt-contracts -->
+<!-- 4. Zuckerberg-Trump llamada privada regulador AI:               -->
+<!--    https://shattered.io/zuckerberg-trump-ai-regulator-call-2026/ -->
+<!-- 5. Carta Congreso a Meta por rollback de safeguards:            -->
+<!--    https://kevinmullin.house.gov/wp-content/uploads/2026/08/Meta-Election-Integrity-Letter-8.17.26.pdf -->
+<!-- 6. Zuckerberg alineación con Trump en debate AI safety:         -->
+<!--    https://news4jax.com/business/2026/09/16/zuckerberg-distances-meta-from-calls-for-a-coordinated-approach-on-an-ai-slowdown -->
+<!-- 7. DeepSeek prohibiciones en gobiernos:                         -->
+<!--    https://techcrunch.com/2025/02/03/deepseek-the-countries-and-agencies-that-have-banned-the-ai-companys-tech -->
+<!-- 8. DeepSeek riesgos privacidad y censura documentada:           -->
+<!--    https://techjacksolutions.com/ai-tools/deepseek/deepseek-security-and-privacy-risks/ -->
+<!-- 9. NYT demanda a Perplexity por copyright:                      -->
+<!--    https://www.courthousenews.com/new-york-times-joins-copyright-fight-against-ai-startup-perplexity/ -->
+<!-- 10. Perplexity demandas múltiples de editores:                  -->
+<!--     https://pressgazette.co.uk/platforms/news-publisher-ai-deals-lawsuits-openai-google/ -->
+<!-- ============================================================ -->
+

@@ -1,0 +1,180 @@
+# Prompting {#sec-prompting}
+
+[(cómo se conversa con la IA)]{style="font-size: 2em; font-weight: bold;"}
+
+Una vez elegida la herramienta, la calidad del resultado a menudo se juega en cómo se le habla. La diferencia entre una respuesta útil y una respuesta genérica no depende del modelo tanto como uno cree: depende del prompt. Aprender a construir prompts es la habilidad que se traslada intacta de una herramienta a otra y de una tarea a otra.
+
+## Qué es un prompt y por qué es una habilidad
+
+Un *prompt* es la instrucción que se le da al modelo. En principio suena simple: uno escribe lo que quiere y el modelo responde. En la práctica hay dos intuiciones equivocadas que se meten al principio y hay que desarmar.
+
+La primera intuición equivocada es tratar al chatbot como si fuera un buscador: escribir palabras clave sueltas ("ANOVA cerezas postcosecha") esperando resultados relevantes. Los buscadores premian palabras clave; *los modelos generativos premian claridad conversacional*. Un prompt en formato de búsqueda produce respuestas de baja calidad porque el modelo no tiene con qué afinar.
+
+La segunda intuición equivocada es la opuesta: tratar al chatbot como si fuera una persona que ya conoce el contexto, sobretodo cuando se inicia con una nueva herramienta. Escribir "*ayúdame con el informe del cliente*" y esperar que entienda de qué cliente, qué informe, qué extensión. El modelo no sabe nada de eso hasta que uno se lo dice.
+
+> La habilidad es aprender a comunicar bien lo que uno necesita. Igual que uno aprende a redactar un correo profesional o a pedir un presupuesto claro a un proveedor.
+
+## Anatomía de un prompt
+
+Un prompt bien armado tiene cinco componentes. No es una fórmula rígida ni hay que incluirlos todos siempre, pero funciona como *checklist mental* para revisar antes de mandar.
+
+1. **Rol.** Quién queremos que sea el modelo al responder *"Actúa como un especialista en fisiología postcosecha"*, *"asume el rol de una revisora metodológica de un journal técnico"*. Fijar el rol calibra el tono, el nivel técnico y qué omite el modelo por obvio.
+2. **Contexto.** La información previa que el modelo necesita para responder bien. Con qué cultivo trabajamos, qué software usamos, quién es el destinatario del resultado, qué se probó antes. Sin contexto, la respuesta es genérica.
+3. **Tarea.** Qué se le pide concretamente. Cuanto más específico, mejor. *"Explícame las diferencias"* es débil; *"compará estas dos técnicas señalando en qué condiciones conviene cada una"* es fuerte.
+4. **Formato de salida.** Cómo debe entregar la respuesta: extensión, estructura, tono. *"En dos párrafos, sin bullet points, con lenguaje técnico pero accesible para un cliente productor"*. Sin esta indicación, cada modelo devuelve su formato por defecto y rara vez es el que uno quiere.
+5. **Ejemplos.** Cuando la tarea es compleja o el formato es inusual, mostrarle uno o dos ejemplos del resultado esperado ahorra varias iteraciones. Los modelos son buenísimos imitando estructuras.
+
+### Ejemplo 1: investigar una metodología estadística
+
+> **Prompt débil:**
+> *¿Cuándo se usa Kruskal-Wallis?*
+
+Esta consulta va a devolver la explicación de manual: qué es Kruskal-Wallis, sus supuestos, cuándo se usa en general. Correcta pero muchas veces inútil, porque quien pregunta probablemente ya sabe todo eso y la información no responde su pregunta real, que es si conviene aplicarlo a su caso específico.
+
+> **Prompt fuerte:**
+> *Actúa como estadístico especializado en investigación agronómica. Estoy analizando datos de firmeza (medida en Newtons con penetrómetro) en cerezas de exportación variedad Santina, comparando cuatro tratamientos postcosecha con 20 repeticiones cada uno. Al hacer el test de Shapiro-Wilk, uno de los tratamientos no cumple normalidad (p = 0.03) y el test de Levene indica varianzas heterogéneas entre grupos (p = 0.02). Necesito decidir entre aplicar ANOVA con corrección de Welch o Kruskal-Wallis. Explicame en dos párrafos las ventajas y desventajas de cada opción para este caso concreto, y recomendame cuál usar justificando la elección. Escribe tu respuesta en un registro técnico pero directo, sin bullet points.*
+
+La diferencia entre los dos prompts no está simplemente en la longitud, está en que el segundo entrega al modelo todo lo que necesita para dar una recomendación aplicable en lugar de una explicación de manual.
+
+### Ejemplo 2: estructurar un reporte desde notas dispersas
+
+> **Prompt débil:**
+> *Haz un informe con estas notas: [notas dispersas de la visita a terreno]*
+
+Este pedido va a producir un texto largo, con encabezados genéricos, sin criterio de qué es lo importante y qué es secundario, y sin ajustarse a cómo esta consultora entrega sus informes. Va a haber que reescribirlo casi entero.
+
+> **Prompt fuerte:**
+> *Actúa como consultora senior en postcosecha de frutas. Te paso mis notas crudas de una visita técnica a un huerto de cerezas variedad Regina en la zona de Curicó. El informe está dirigido al productor (nivel técnico medio, no académico) y su objetivo es que él pueda tomar decisiones operativas antes de la próxima cosecha. Necesito que estructures las notas siguiendo este esquema: (1) resumen ejecutivo de 3-5 líneas, (2) hallazgos principales en orden de prioridad, (3) recomendaciones concretas y accionables, (4) seguimiento sugerido. Mantén el tono profesional pero cercano. Si en las notas hay ambigüedades o información que falta para completar alguna sección, señalala al final en vez de inventar. Las notas en cuestión son: [pegar acá]*
+
+El segundo prompt no solamente estructura mejor: la instrucción de *señalar lo que falta en vez de inventar* es la que baja drásticamente el riesgo de alucinaciones en este tipo de tarea.
+
+<!-- [Espacio para imagen: captura lado a lado de la respuesta al prompt débil vs al prompt fuerte del ejemplo 1 o 2, para ilustrar visualmente la diferencia] -->
+
+### Errores comunes que reconocer
+
+- **Prompt vago.** *"Explicame ANOVA"*, *"hacé un informe"*. El modelo no puede afinar sin más información.
+- **Contexto ausente.** Preguntas técnicas sin decir de qué rubro, qué cultivo, qué software. La respuesta cae al promedio.
+- **Sin formato de salida.** El modelo elige por defecto una estructura con encabezados y bullets.
+- **Asumir conocimiento.** "Postcosecha" significa cosas distintas para uva de mesa, para carozo y para citrícos. Vale la pena aclarar.
+- **Todo en un solo prompt gigante.** A veces conviene dividir en dos o tres pasos consecutivos en lugar de pedir todo junto.
+
+## Formas de conversación 
+
+Rara vez el primer prompt da la respuesta perfecta. La primera respuesta se trata como *punto de partida*, no como resultado final. Iterar bien es la mitad del trabajo.
+
+Las técnicas de iteración más útiles son también las más simples:
+
+- **Pedir reformulación:** *"dámelo más corto", "haz la versión técnica", "quitale el tono comercial", "escribelo como si se lo mandaras a un ingeniero, no a un vendedor".*
+- **Pedir más detalle en un punto específico:** *"expande el punto 3, los demás bórralos".*
+- **Pedir ejemplos concretos:** *"dame un caso concreto donde esto se aplique en cerezas".*
+- **Corregir el rumbo:** *"no era eso lo que quería, quería X porque Y; volvé a intentarlo".*
+
+### Meta-prompting: pedirle al modelo que ayude con el prompt
+
+Cuando uno no está seguro de cómo pedir lo que necesita, la red de seguridad más útil es pedirle al modelo mismo (o a otra IA) que ayude a formularlo. Un ejemplo concreto:
+
+> *No estoy segura de cómo pedirte bien lo que necesito. Quiero analizar datos de calibre en arándanos entre cuatro proveedores, tengo todo en una planilla pero no sé si necesitas otras especificaciones u otra información para que me ayudes a decidir qué prueba estadística usar. ¿Qué preguntas me harías para poder responderme bien?*
+
+El modelo devuelve una lista de preguntas útiles (cuántos datos, distribución, si hay medidas repetidas, etc.) que sirven como estructura para el prompt siguiente. Es la técnica más simple para pasar de "no sé qué pedir" a "sé exactamente qué pedir".
+
+### Elección del modelo
+
+Cada herramienta ofrece varios modelos con distinta capacidad y distinto costo en cuota de uso. Los modelos más avanzados (razonamiento profundo, "pensamiento extendido") son excelentes para tareas complejas pero consumen la cuota mucho más rápido. Los modelos ligeros responden más rápido y gastan menos, y son perfectamente adecuados para tareas simples.
+
+Una buena práctica es *hacer coincidir el modelo con la tarea*: para reformular un párrafo o responder una duda puntual -> un modelo ligero; para analizar un paper largo o discutir metodología -> modelo avanzado . Esto no solamente ahorra cuota: muchas veces el modelo ligero da mejores respuestas para tareas simples porque no sobre-elabora.
+
+<!-- [Espacio para imagen: captura del selector de modelos en las tres herramientas, para que ella los pueda ubicar visualmente] -->
+
+### Memoria e historial
+
+En las herramientas actuales cada mensaje que se manda en un chat se suma al *contexto acumulado* de esa conversación: el modelo puede acceder a lo dicho anteriormente y generalmente tiene presente información clave como género, edad, profesion del usuario etc. Esto tiene dos consecuencias prácticas.
+
+Los chats muy largos empiezan a arrastrar errores del inicio. Si el modelo se aferró a una interpretación equivocada tres mensajes atrás, cuesta mucho hacerle cambiar el rumbo dentro de la misma conversación. **Regla práctica:** cuando el modelo se "obstinó" y ya no responde bien, conviene abrir un chat nuevo con el prompt corregido en vez de seguir peleando en el mismo.
+
+Cuándo continuar el mismo chat: cuando el contexto acumulado sirve (uno ya le explicó el proyecto, cargó documentos, definió el tono). Cuándo abrir uno nuevo: cuando la tarea cambia, o cuando el chat viejo se torció.
+
+## Instrucciones persistentes: personalizar el asistente
+
+Ligado a lo anterior tenemos la existencia de una segunda capa que a veces se olvida y que es la que hace la diferencia entre usar la herramienta *ocasionalmente* y usarla como *herramienta de trabajo*: las **instrucciones persistentes**.
+
+> Un prompt es lo que uno le dice al modelo esta vez. Las instrucciones persistentes son lo que siempre aplica sin repetir.
+
+Pensarlo como dos capas evita mucho trabajo repetido. Si uno se sorprende escribiendo *"recuerda que trabajo en postcosecha de fruta"* en cada chat, esa frase debería estar una capa más arriba.
+
+Las herramientas más masificadas tienen disponible una **memoria de largo plazo**. Es útil para preferencias generales ("*trabajo en postcosecha, prefiero respuestas en español y sin bullets*") que uno no quiere repetir en cada chat. No reemplaza al prompt del mensaje: la memoria es una capa de fondo, el prompt sigue siendo lo que se juega en el momento.
+
+### Personalización global
+
+Las tres herramientas permiten dejar instrucciones que se aplican a todas las conversaciones:
+
+- **ChatGPT** — en Settings → *Personalization* → *Custom Instructions*.
+- **Claude** — en Settings → *Profile* → *Personal preferences*.
+- **Gemini** — en Settings → *Personalization*, ligado a la cuenta Google.
+
+Lo típico que conviene dejar acá: quién es uno profesionalmente, en qué rubro trabaja, qué formato de respuesta prefiere, qué idioma y registro. Se escribe una vez y ahorra explicaciones en cada chat.
+
+### Proyectos: contenedores por tema o cliente
+
+Un **proyecto** es un contenedor persistente que agrupa: instrucciones específicas para ese tema, documentos cargados como base de conocimiento, y todos los chats relacionados juntos en un mismo lugar. Es una capa intermedia entre "una conversación suelta" y "toda la cuenta".
+
+**Claude Projects** es la implementación más madura de esta idea. Permite definir instrucciones detalladas para el proyecto y cargar documentos que quedan siempre disponibles en todas las conversaciones dentro del proyecto. Un proyecto "Metodología estadística en postcosecha" con papers cargados + instrucciones sobre nivel técnico esperado significa que en cada chat nuevo el modelo ya sabe con qué está trabajando.
+
+**ChatGPT Projects** ofrece una función equivalente, introducida recientemente. Permite crear proyectos con instrucciones propias, cargar archivos y agrupar conversaciones. La lógica es la misma que en Claude, con algunas diferencias en la interfaz y en los tipos de archivo admitidos.
+
+**Gemini Gems** es el nombre que Google usa para su versión. Conceptualmente está más orientada a "asistentes reutilizables" (una plantilla de asistente para una tarea recurrente) que a workspaces por tema, pero cumple una función parecida y se pueden cargar archivos como referencia.
+
+<!-- [Espacio para imagen: capturas lado a lado de la interfaz de Projects en Claude, Projects en ChatGPT, y Gems en Gemini] -->
+
+**Regla práctica para decidir:** si uno va a tener más de tres conversaciones sobre el mismo tema, conviene un proyecto. Si es una consulta puntual que no se va a repetir, un chat suelto alcanza.
+
+<!-- [Espacio para imagen: captura del proyecto de la alumna una vez que lo configure — sirve como caso vivo] -->
+
+### Adjuntar archivos en un chat suelto
+
+No hace falta un proyecto para trabajar con documentos propios: los chats sueltos admiten adjuntar PDFs, planillas de Excel, imágenes, capturas de pantalla. Esto se ve en detalle en la sesión 4, pero conviene saber desde ahora que existe.
+
+## Conversar con la voz
+
+El voice chat tiene la misma lógica que en el chat de texto (el prompt sigue mandando), lo que cambia es la interfaz, a menudo la conversación es transcrita por la herramienta de manera tal que el usuario puede acceder a la conversación con posterioridad.
+
+**ChatGPT Advanced Voice** es la más natural conversacionalmente. Usa una arquitectura *full-duplex*: habla y escucha al mismo tiempo, lo que permite interrumpir al modelo mientras responde, tal como en una conversación humana. Se activa desde la app móvil.
+
+**Gemini Live** está enfocado principalmente en móvil y tiene una ventaja concreta: puede usar la cámara del celular en tiempo real. Uno le enfoca algo (una hoja con síntomas, un fruto con daño, una etiqueta) y le pregunta sobre eso. Está profundamente integrado con el ecosistema Google.
+
+**Claude Voice** es el más reciente. Usa un sistema *turn-based* (habla-escucha por turnos, un poco menos fluido que el full-duplex), ofrece cinco voces distintas, y en planes pagos puede ejecutar acciones en Gmail y Google Calendar. Cada conversación de voz termina con una transcripción y un resumen automáticos.
+
+<!-- [Espacio para imagen: captura de los tres modos de voz activos en móvil, o los íconos donde se accede a cada uno] -->
+
+**Cuándo la voz aporta genuinamente:**
+
+- Cuando aparecen ideas rápidas que se pierden si hay que escribirlas.
+- Para dictar notas de terreno que después se estructuran en texto.
+- Cuando las manos están ocupadas (manejando, en campo, en una visita técnica).
+
+**Cuándo no conviene:**
+
+- En tareas técnicas que requieren leer y releer la respuesta.
+- Cuando se trabaja con código o con tablas de datos.
+- En cualquier tarea que requiera revisión cuidadosa: la voz invita a aceptar la primera respuesta.
+
+**Advertencias prácticas:**
+
+- La transcripción suele fallar con jerga técnica (nombres de cultivares, nombres químicos, unidades poco frecuentes). Vale la pena verificar los términos cuando importa.
+- Los modos de voz capturan audio ambiente mientras están activos. Ojo en reuniones sensibles o cuando hay información confidencial cerca.
+- Las conversaciones por voz cuentan contra la misma cuota del plan que las de texto.
+
+## En resumen
+
+El prompt es la habilidad transversal a todo el uso de IA generativa. Cambia la herramienta, cambian los botones, pero el modelo mental se traslada intacto: rol, contexto, tarea, formato, ejemplos. Iterar en vez de esperar el acierto al primer intento. Persistir en instrucciones lo que se repite en cada chat, y usar proyectos cuando el trabajo sobre un tema es sostenido.
+
+La próxima sesión aplica todo esto al trabajo con documentos propios: PDFs de papers, planillas de Excel, informes viejos que sirven de base para nuevos.
+
+## Glosario mínimo de la sesión
+
+- **Prompt:** la instrucción que se le da al modelo en un mensaje.
+- **Instrucciones persistentes / custom instructions:** configuración global que se aplica a todas las conversaciones sin necesidad de repetirla.
+- **Proyecto (Claude Projects, ChatGPT Projects, Gemini Gems):** contenedor que agrupa instrucciones específicas, documentos cargados y conversaciones relacionadas sobre un mismo tema.
+- **Meta-prompting:** técnica de pedirle al modelo que ayude a formular el prompt.
+- **Contexto acumulado:** información que el modelo tiene presente dentro de una misma conversación; incluye todo lo dicho previamente en ese chat.
+- **Memoria de largo plazo:** capacidad del modelo de recordar información entre conversaciones distintas (activable/desactivable en las tres herramientas).
+- **Full-duplex / turn-based:** dos arquitecturas del modo voz. Full-duplex permite interrumpir al modelo (más natural); turn-based espera a que el usuario termine (menos fluido).
